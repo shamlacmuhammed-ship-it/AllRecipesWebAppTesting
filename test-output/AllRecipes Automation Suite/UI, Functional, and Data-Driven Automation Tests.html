@@ -1,0 +1,963 @@
+<html>
+<head>
+<title>TestNG:  UI, Functional, and Data-Driven Automation Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>UI, Functional, and Data-Driven Automation Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>41/15/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Jul 09 17:02:03 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>1356 seconds (1356920 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.HomeTest.verifyLoginSignInOptionAvailable()'><b>verifyLoginSignInOptionAvailable</b><br>Test class: tests.HomeTest</td>
+<td><div><pre>java.lang.AssertionError: DEFECT [TC_LR_001]: Login/Sign In option is not visible or accessible on the homepage. expected [true] but found [false]
+	at tests.HomeTest.verifyLoginSignInOptionAvailable(HomeTest.java:155)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1401095299", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1401095299'><pre>java.lang.AssertionError: DEFECT [TC_LR_001]: Login/Sign In option is not visible or accessible on the homepage. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.HomeTest.verifyLoginSignInOptionAvailable(HomeTest.java:155)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyRegisterCreateAccountOptionAvailable()'><b>verifyRegisterCreateAccountOptionAvailable</b><br>Test class: tests.HomeTest</td>
+<td><div><pre>java.lang.AssertionError: DEFECT [TC_LR_002]: Register/Create Account option is not visible or accessible on the homepage. expected [true] but found [false]
+	at tests.HomeTest.verifyRegisterCreateAccountOptionAvailable(HomeTest.java:168)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1176001051", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1176001051'><pre>java.lang.AssertionError: DEFECT [TC_LR_002]: Register/Create Account option is not visible or accessible on the homepage. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.HomeTest.verifyRegisterCreateAccountOptionAvailable(HomeTest.java:168)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyHeaderMenusContent()'><b>verifyHeaderMenusContent</b><br>Test class: tests.HomeTest</td>
+<td><div><pre>java.lang.AssertionError: CRITICAL DEFECT [HP_005]: &apos;Add Recipe&apos; option is not available on the homepage. expected [true] but found [false]
+	at tests.HomeTest.verifyHeaderMenusContent(HomeTest.java:49)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace494414526", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace494414526'><pre>java.lang.AssertionError: CRITICAL DEFECT [HP_005]: &apos;Add Recipe&apos; option is not available on the homepage. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.HomeTest.verifyHeaderMenusContent(HomeTest.java:49)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyLoginNavigation()'><b>verifyLoginNavigation</b><br>Test class: tests.MyRecipesTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[contains(@class, &apos;sign-in-link&apos;) or contains(., &apos;Log In&apos;)] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.198, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ACER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62292}, goog:processID: 56456, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62292/devtoo..., se:cdpVersion: 149.0.7827.198, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 62db923587537f74dc443f98e0ec58db
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.MyRecipesPage.clickLogin(MyRecipesPage.java:72)
+	at tests.MyRecipesTest.verifyLoginNavigation(MyRecipesTest.java:60)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace520525230", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace520525230'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[contains(@class, &apos;sign-in-link&apos;) or contains(., &apos;Log In&apos;)] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.198, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ACER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62292}, goog:processID: 56456, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62292/devtoo..., se:cdpVersion: 149.0.7827.198, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 62db923587537f74dc443f98e0ec58db
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.MyRecipesPage.clickLogin(MyRecipesPage.java:72)
+	at tests.MyRecipesTest.verifyLoginNavigation(MyRecipesTest.java:60)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>15</td>
+<td>tests.MyRecipesTest@158a8276</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyLoginButton()'><b>verifyLoginButton</b><br>Test class: tests.MyRecipesTest</td>
+<td><div><pre>java.lang.AssertionError: Login navigation target element was missing. expected [true] but found [false]
+	at tests.MyRecipesTest.verifyLoginButton(MyRecipesTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace33506454", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace33506454'><pre>java.lang.AssertionError: Login navigation target element was missing. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.MyRecipesTest.verifyLoginButton(MyRecipesTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>15</td>
+<td>tests.MyRecipesTest@158a8276</td></tr>
+<tr>
+<td title='tests.SearchTest.verifySuggestions()'><b>verifySuggestions</b><br>Test class: tests.SearchTest<br>Test method: RS_008: Verify suggestions appear while typing</td>
+<td><div><pre>java.lang.AssertionError: FAIL: Autocomplete suggestions did not drop down. expected [true] but found [false]
+	at tests.SearchTest.verifySuggestions(SearchTest.java:93)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1778902730", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1778902730'><pre>java.lang.AssertionError: FAIL: Autocomplete suggestions did not drop down. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SearchTest.verifySuggestions(SearchTest.java:93)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>32</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyJoinNavigation()'><b>verifyJoinNavigation</b><br>Test class: tests.MyRecipesTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for at least one condition to be valid: url to contain &quot;signup&quot;. Current url: &quot;https://www.allrecipes.com/cook/23620615&quot; || url to contain &quot;register&quot;. Current url: &quot;https://www.allrecipes.com/cook/23620615&quot; || url to contain &quot;identity&quot;. Current url: &quot;https://www.allrecipes.com/cook/23620615&quot; (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.198, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ACER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53848}, goog:processID: 19284, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53848/devtoo..., se:cdpVersion: 149.0.7827.198, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 48f63d80ebb5907ad96199097afbcf0b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at tests.MyRecipesTest.verifyJoinNavigation(MyRecipesTest.java:81)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1677025976", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1677025976'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for at least one condition to be valid: url to contain &quot;signup&quot;. Current url: &quot;https://www.allrecipes.com/cook/23620615&quot; || url to contain &quot;register&quot;. Current url: &quot;https://www.allrecipes.com/cook/23620615&quot; || url to contain &quot;identity&quot;. Current url: &quot;https://www.allrecipes.com/cook/23620615&quot; (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.198, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ACER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53848}, goog:processID: 19284, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53848/devtoo..., se:cdpVersion: 149.0.7827.198, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 48f63d80ebb5907ad96199097afbcf0b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at tests.MyRecipesTest.verifyJoinNavigation(MyRecipesTest.java:81)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>15</td>
+<td>tests.MyRecipesTest@158a8276</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyBrokenImages()'><b>verifyBrokenImages</b><br>Test class: tests.SearchTest</td>
+<td><div><pre>java.lang.AssertionError: Broken content images found on results page. expected [true] but found [false]
+	at tests.SearchTest.verifyBrokenImages(SearchTest.java:108)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace626137117", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace626137117'><pre>java.lang.AssertionError: Broken content images found on results page. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SearchTest.verifyBrokenImages(SearchTest.java:108)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>61</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifySearchBar()'><b>verifySearchBar</b><br>Test class: tests.MyRecipesTest</td>
+<td><div><pre>java.lang.AssertionError: Search bar element was not visible on the webpage context. expected [true] but found [false]
+	at tests.MyRecipesTest.verifySearchBar(MyRecipesTest.java:32)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace415128526", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace415128526'><pre>java.lang.AssertionError: Search bar element was not visible on the webpage context. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.MyRecipesTest.verifySearchBar(MyRecipesTest.java:32)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>15</td>
+<td>tests.MyRecipesTest@158a8276</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyRecipeSearch()'><b>verifyRecipeSearch</b><br>Test class: tests.MyRecipesTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: search-form-input_1-0 (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.198, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ACER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53567}, goog:processID: 17896, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53567/devtoo..., se:cdpVersion: 149.0.7827.198, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6b7d524f414e120cdc2ce7a9d131e0a0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.MyRecipesPage.searchRecipe(MyRecipesPage.java:65)
+	at tests.MyRecipesTest.verifyRecipeSearch(MyRecipesTest.java:52)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2085627073", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2085627073'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: search-form-input_1-0 (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 149.0.7827.198, chrome: {chromedriverVersion: 149.0.7827.155 (07b52360cc1..., userDataDir: C:\Users\ACER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53567}, goog:processID: 17896, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53567/devtoo..., se:cdpVersion: 149.0.7827.198, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6b7d524f414e120cdc2ce7a9d131e0a0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.MyRecipesPage.searchRecipe(MyRecipesPage.java:65)
+	at tests.MyRecipesTest.verifyRecipeSearch(MyRecipesTest.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>15</td>
+<td>tests.MyRecipesTest@158a8276</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyHomepageScrollingAccessibility()'><b>verifyHomepageScrollingAccessibility</b><br>Test class: tests.HomeTest</td>
+<td><div><pre>java.lang.AssertionError: USER EXPERIENCE DEFECT [HP_014]: Homepage requires unnecessary scrolling before users can view primary content. expected [false] but found [true]
+	at tests.HomeTest.verifyHomepageScrollingAccessibility(HomeTest.java:126)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1191863711", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1191863711'><pre>java.lang.AssertionError: USER EXPERIENCE DEFECT [HP_014]: Homepage requires unnecessary scrolling before users can view primary content. expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertFalse(Assert.java:79)
+	at tests.HomeTest.verifyHomepageScrollingAccessibility(HomeTest.java:126)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>1</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyHomepageContentSectionsAndLinks()'><b>verifyHomepageContentSectionsAndLinks</b><br>Test class: tests.HomeTest</td>
+<td><div><pre>java.lang.AssertionError: Featured recipes section is missing. expected [false] but found [true]
+	at tests.HomeTest.verifyHomepageContentSectionsAndLinks(HomeTest.java:99)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1061998933", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1061998933'><pre>java.lang.AssertionError: Featured recipes section is missing. expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertFalse(Assert.java:79)
+	at tests.HomeTest.verifyHomepageContentSectionsAndLinks(HomeTest.java:99)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>1</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyActiveMenuHighlighting()'><b>verifyActiveMenuHighlighting</b><br>Test class: tests.HomeTest</td>
+<td><div><pre>java.lang.AssertionError: VISUAL DEFECT [HP_006]: Menu item does not appear highlighted when active. expected [true] but found [false]
+	at tests.HomeTest.verifyActiveMenuHighlighting(HomeTest.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2090894907", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2090894907'><pre>java.lang.AssertionError: VISUAL DEFECT [HP_006]: Menu item does not appear highlighted when active. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.HomeTest.verifyActiveMenuHighlighting(HomeTest.java:57)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyBrokenLinks()'><b>verifyBrokenLinks</b><br>Test class: tests.SearchTest</td>
+<td><div><pre>java.lang.AssertionError: Broken content hyperlinks found on results page. expected [true] but found [false]
+	at tests.SearchTest.verifyBrokenLinks(SearchTest.java:115)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2046139918", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2046139918'><pre>java.lang.AssertionError: Broken content hyperlinks found on results page. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SearchTest.verifyBrokenLinks(SearchTest.java:115)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>2</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testMobileResponsivenessBreakpointScaling()'><b>testMobileResponsivenessBreakpointScaling</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify mobile responsiveness elements scale usable inside compressed display frames</td>
+<td><div><pre>java.lang.AssertionError: Mobile Responsiveness Error: Form elements vanished or compressed out of viewport boundaries! expected [true] but found [false]
+	at tests.SweepstakesTest.testMobileResponsivenessBreakpointScaling(SweepstakesTest.java:153)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace188878238", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace188878238'><pre>java.lang.AssertionError: Mobile Responsiveness Error: Form elements vanished or compressed out of viewport boundaries! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SweepstakesTest.testMobileResponsivenessBreakpointScaling(SweepstakesTest.java:153)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>22</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeTimingAndUtilityOptions()'><b>verifyRecipeTimingAndUtilityOptions</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8858/cream-of-chicken-breasts/</td>
+<td></td>
+<td>3</td>
+<td>tests.RecipeDetailTest@17f7cd29</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweeptakesSubscriptionDataDriven()'><b>testSweeptakesSubscriptionDataDriven</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenarios: Valid Entry, Invalid Email, Success Msg, and Duplicate Handling<br>Parameters: [Ljava.lang.String;@4276bd6</td>
+<td></td>
+<td>26</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testMandatoryFieldValidation()'><b>testMandatoryFieldValidation</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify mandatory field validation triggers error flags on blank submission</td>
+<td></td>
+<td>20</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyHomepageImagesLoad()'><b>verifyHomepageImagesLoad</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyKeywordSearch()'><b>verifyKeywordSearch</b><br>Test class: tests.SearchTest<br>Parameters: cake</td>
+<td></td>
+<td>32</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyHomepageLoadingAndMetadata()'><b>verifyHomepageLoadingAndMetadata</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.NewsletterTest.testNewsletterSubscriptionDataDriven()'><b>testNewsletterSubscriptionDataDriven</b><br>Test class: tests.NewsletterTest<br>Parameters: , empty</td>
+<td></td>
+<td>21</td>
+<td>tests.NewsletterTest@7d8704ef</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweeptakesSubscriptionDataDriven()'><b>testSweeptakesSubscriptionDataDriven</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenarios: Valid Entry, Invalid Email, Success Msg, and Duplicate Handling<br>Parameters: [Ljava.lang.String;@1d5b4a5b</td>
+<td></td>
+<td>20</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testAdvertisementPageSpaceOccupancy()'><b>testAdvertisementPageSpaceOccupancy</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify Advertisement layout bounds do not occupy excessive viewport space</td>
+<td></td>
+<td>13</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testBrowserCompatibilityEnvironmentMetadata()'><b>testBrowserCompatibilityEnvironmentMetadata</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify browser compatibility driver context metrics mapping</td>
+<td></td>
+<td>0</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyJoinButton()'><b>verifyJoinButton</b><br>Test class: tests.MyRecipesTest</td>
+<td></td>
+<td>0</td>
+<td>tests.MyRecipesTest@158a8276</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeTimingAndUtilityOptions()'><b>verifyRecipeTimingAndUtilityOptions</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8095/black-forest-cake-i/</td>
+<td></td>
+<td>32</td>
+<td>tests.RecipeDetailTest@17f7cd29</td></tr>
+<tr>
+<td title='tests.NewsletterTest.testNewsletterSubscriptionDataDriven()'><b>testNewsletterSubscriptionDataDriven</b><br>Test class: tests.NewsletterTest<br>Parameters: existinguser@gmail.com, Success!
+Thanks for signing up!</td>
+<td></td>
+<td>20</td>
+<td>tests.NewsletterTest@7d8704ef</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyCoreHeaderElements()'><b>verifyCoreHeaderElements</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>3</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyScroll()'><b>verifyScroll</b><br>Test class: tests.SearchTest</td>
+<td></td>
+<td>30</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeContentProfile()'><b>verifyRecipeContentProfile</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8858/cream-of-chicken-breasts/</td>
+<td></td>
+<td>8</td>
+<td>tests.RecipeDetailTest@17f7cd29</td></tr>
+<tr>
+<td title='tests.NewsletterTest.testNewsletterSubscriptionDataDriven()'><b>testNewsletterSubscriptionDataDriven</b><br>Test class: tests.NewsletterTest<br>Parameters: invalidEmail@@.com, Please provide your email address in format: yourname@example.com</td>
+<td></td>
+<td>24</td>
+<td>tests.NewsletterTest@7d8704ef</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyKeywordSearch()'><b>verifyKeywordSearch</b><br>Test class: tests.SearchTest<br>Parameters: pasta</td>
+<td></td>
+<td>33</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testApplicationStabilityDuringSubmissionPipeline()'><b>testApplicationStabilityDuringSubmissionPipeline</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify application stability during form data transmission execution routines</td>
+<td></td>
+<td>0</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyBrowserNavigationControls()'><b>verifyBrowserNavigationControls</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>1</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweeptakesSubscriptionDataDriven()'><b>testSweeptakesSubscriptionDataDriven</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenarios: Valid Entry, Invalid Email, Success Msg, and Duplicate Handling<br>Parameters: [Ljava.lang.String;@a3739e1</td>
+<td></td>
+<td>39</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyKeywordSearch()'><b>verifyKeywordSearch</b><br>Test class: tests.SearchTest<br>Parameters: chicken</td>
+<td></td>
+<td>32</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyEmptySearch()'><b>verifyEmptySearch</b><br>Test class: tests.SearchTest</td>
+<td></td>
+<td>2</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyKeywordSearch()'><b>verifyKeywordSearch</b><br>Test class: tests.SearchTest<br>Parameters: xyz123456</td>
+<td></td>
+<td>33</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyBannerLayoutImpact()'><b>verifyBannerLayoutImpact</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6f03482</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyAdvertisingBannerLayout()'><b>verifyAdvertisingBannerLayout</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8858/cream-of-chicken-breasts/</td>
+<td></td>
+<td>3</td>
+<td>tests.RecipeDetailTest@17f7cd29</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyRecipeMatch()'><b>verifyRecipeMatch</b><br>Test class: tests.SearchTest</td>
+<td></td>
+<td>1</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeRatingsAreDisplayed()'><b>verifyRecipeRatingsAreDisplayed</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8095/black-forest-cake-i/</td>
+<td></td>
+<td>2</td>
+<td>tests.RecipeDetailTest@17f7cd29</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyInvalidKeyword()'><b>verifyInvalidKeyword</b><br>Test class: tests.SearchTest</td>
+<td></td>
+<td>1</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyHeroHeading()'><b>verifyHeroHeading</b><br>Test class: tests.MyRecipesTest</td>
+<td></td>
+<td>0</td>
+<td>tests.MyRecipesTest@158a8276</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyAdvertisingBannerLayout()'><b>verifyAdvertisingBannerLayout</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8095/black-forest-cake-i/</td>
+<td></td>
+<td>24</td>
+<td>tests.RecipeDetailTest@17f7cd29</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweepstakesPageOpensSuccessfully()'><b>testSweepstakesPageOpensSuccessfully</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify Sweepstakes page opens successfully</td>
+<td></td>
+<td>4</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.NewsletterTest.testNewsletterSubscriptionDataDriven()'><b>testNewsletterSubscriptionDataDriven</b><br>Test class: tests.NewsletterTest<br>Parameters: validuser123@gmail.com, Success!
+Thanks for signing up!</td>
+<td></td>
+<td>20</td>
+<td>tests.NewsletterTest@7d8704ef</td></tr>
+<tr>
+<td title='tests.SearchTest.verifySearchBarDisplayed()'><b>verifySearchBarDisplayed</b><br>Test class: tests.SearchTest</td>
+<td></td>
+<td>0</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeRatingsAreDisplayed()'><b>verifyRecipeRatingsAreDisplayed</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8858/cream-of-chicken-breasts/</td>
+<td></td>
+<td>3</td>
+<td>tests.RecipeDetailTest@17f7cd29</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweeptakesSubscriptionDataDriven()'><b>testSweeptakesSubscriptionDataDriven</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenarios: Valid Entry, Invalid Email, Success Msg, and Duplicate Handling<br>Parameters: [Ljava.lang.String;@6d9f3b1f</td>
+<td></td>
+<td>19</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweeptakesSubscriptionDataDriven()'><b>testSweeptakesSubscriptionDataDriven</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenarios: Valid Entry, Invalid Email, Success Msg, and Duplicate Handling<br>Parameters: [Ljava.lang.String;@525984a1</td>
+<td></td>
+<td>20</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeContentProfile()'><b>verifyRecipeContentProfile</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8095/black-forest-cake-i/</td>
+<td></td>
+<td>4</td>
+<td>tests.RecipeDetailTest@17f7cd29</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testTermsAndConditionsLinkRouting()'><b>testTermsAndConditionsLinkRouting</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify Terms & Conditions link structure and endpoint navigation routing</td>
+<td></td>
+<td>6</td>
+<td>tests.SweepstakesTest@13b6aecc</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyKeywordSearch()'><b>verifyKeywordSearch</b><br>Test class: tests.SearchTest<br>Parameters: </td>
+<td></td>
+<td>33</td>
+<td>tests.SearchTest@247bddad</td></tr>
+<tr>
+<td title='tests.NewsletterTest.testNewsletterSubscriptionDataDriven()'><b>testNewsletterSubscriptionDataDriven</b><br>Test class: tests.NewsletterTest<br>Parameters: , </td>
+<td></td>
+<td>20</td>
+<td>tests.NewsletterTest@7d8704ef</td></tr>
+</table><p>
+</body>
+</html>

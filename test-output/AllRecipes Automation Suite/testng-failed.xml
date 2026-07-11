@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AllRecipes Automation Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="UI, Functional, and Data-Driven Automation Tests(failed)">
+    <classes>
+      <class name="tests.HomeTest">
+        <methods>
+          <include name="verifyHomepageContentSectionsAndLinks"/>
+          <include name="verifyHeaderMenusContent"/>
+          <include name="tearDown"/>
+          <include name="verifyRegisterCreateAccountOptionAvailable"/>
+          <include name="setup"/>
+          <include name="verifyLoginSignInOptionAvailable"/>
+          <include name="verifyActiveMenuHighlighting"/>
+          <include name="verifyHomepageScrollingAccessibility"/>
+        </methods>
+      </class> <!-- tests.HomeTest -->
+      <class name="tests.SearchTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyBrokenLinks"/>
+          <include name="setup"/>
+          <include name="verifyBrokenImages"/>
+          <include name="verifySuggestions"/>
+          <include name="setupPage"/>
+        </methods>
+      </class> <!-- tests.SearchTest -->
+      <class name="tests.MyRecipesTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="verifyJoinNavigation"/>
+          <include name="verifyRecipeSearch"/>
+          <include name="verifyLoginNavigation"/>
+          <include name="verifySearchBar"/>
+          <include name="verifyLoginButton"/>
+          <include name="setupPage"/>
+        </methods>
+      </class> <!-- tests.MyRecipesTest -->
+      <class name="tests.SweepstakesTest">
+        <methods>
+          <include name="testMobileResponsivenessBreakpointScaling"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- tests.SweepstakesTest -->
+    </classes>
+  </test> <!-- UI, Functional, and Data-Driven Automation Tests(failed) -->
+  <test thread-count="5" name="AllRecipes Regression Suite - Edge(failed)">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="tests.HomeTest">
+        <methods>
+          <include name="verifyHeaderMenusContent"/>
+          <include name="verifyHomepageContentSectionsAndLinks"/>
+          <include name="tearDown"/>
+          <include name="verifyRegisterCreateAccountOptionAvailable"/>
+          <include name="verifyHomepageLoadingAndMetadata"/>
+          <include name="setup"/>
+          <include name="verifyBrowserNavigationControls"/>
+          <include name="verifyActiveMenuHighlighting"/>
+          <include name="verifyLoginSignInOptionAvailable"/>
+          <include name="verifyBannerLayoutImpact"/>
+          <include name="verifyHomepageImagesLoad"/>
+          <include name="verifyHomepageScrollingAccessibility"/>
+          <include name="verifyCoreHeaderElements"/>
+        </methods>
+      </class> <!-- tests.HomeTest -->
+      <class name="tests.SearchTest">
+        <methods>
+          <include name="verifyKeywordSearch"/>
+          <include name="verifySearchBarDisplayed"/>
+          <include name="tearDown"/>
+          <include name="verifyBrokenLinks"/>
+          <include name="setup"/>
+          <include name="verifyBrokenImages"/>
+          <include name="verifyEmptySearch"/>
+          <include name="verifySuggestions"/>
+          <include name="setupPage"/>
+          <include name="verifyRecipeMatch"/>
+          <include name="verifyInvalidKeyword"/>
+          <include name="verifyScroll"/>
+        </methods>
+      </class> <!-- tests.SearchTest -->
+      <class name="tests.RecipeDetailTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyAdvertisingBannerLayout"/>
+          <include name="setup"/>
+          <include name="verifyRecipeTimingAndUtilityOptions"/>
+          <include name="verifyRecipeContentProfile"/>
+          <include name="verifyRecipeRatingsAreDisplayed"/>
+        </methods>
+      </class> <!-- tests.RecipeDetailTest -->
+      <class name="tests.MyRecipesTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyJoinNavigation"/>
+          <include name="setup"/>
+          <include name="verifyRecipeSearch"/>
+          <include name="verifyLoginNavigation"/>
+          <include name="verifySearchBar"/>
+          <include name="verifyHeroHeading"/>
+          <include name="verifyLoginButton"/>
+          <include name="verifyJoinButton"/>
+          <include name="setupPage"/>
+        </methods>
+      </class> <!-- tests.MyRecipesTest -->
+      <class name="tests.NewsletterTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="testNewsletterSubscriptionDataDriven"/>
+        </methods>
+      </class> <!-- tests.NewsletterTest -->
+      <class name="tests.SweepstakesTest">
+        <methods>
+          <include name="testMobileResponsivenessBreakpointScaling"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="testMandatoryFieldValidation"/>
+          <include name="testTermsAndConditionsLinkRouting"/>
+          <include name="testBrowserCompatibilityEnvironmentMetadata"/>
+          <include name="testAdvertisementPageSpaceOccupancy"/>
+          <include name="testApplicationStabilityDuringSubmissionPipeline"/>
+          <include name="testSweepstakesPageOpensSuccessfully"/>
+          <include name="testSweeptakesSubscriptionDataDriven"/>
+        </methods>
+      </class> <!-- tests.SweepstakesTest -->
+    </classes>
+  </test> <!-- AllRecipes Regression Suite - Edge(failed) -->
+  <test thread-count="5" name="AllRecipes Regression Suite - FireFox(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="tests.HomeTest">
+        <methods>
+          <include name="verifyHomepageContentSectionsAndLinks"/>
+          <include name="verifyHeaderMenusContent"/>
+          <include name="tearDown"/>
+          <include name="verifyRegisterCreateAccountOptionAvailable"/>
+          <include name="setup"/>
+          <include name="verifyActiveMenuHighlighting"/>
+          <include name="verifyLoginSignInOptionAvailable"/>
+          <include name="verifyHomepageScrollingAccessibility"/>
+        </methods>
+      </class> <!-- tests.HomeTest -->
+      <class name="tests.SearchTest">
+        <methods>
+          <include name="verifyKeywordSearch"/>
+          <include name="verifySearchBarDisplayed"/>
+          <include name="tearDown"/>
+          <include name="verifyBrokenLinks"/>
+          <include name="setup"/>
+          <include name="verifyBrokenImages"/>
+          <include name="verifyEmptySearch"/>
+          <include name="verifySuggestions"/>
+          <include name="setupPage"/>
+          <include name="verifyRecipeMatch"/>
+          <include name="verifyInvalidKeyword"/>
+          <include name="verifyScroll"/>
+        </methods>
+      </class> <!-- tests.SearchTest -->
+      <class name="tests.RecipeDetailTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyAdvertisingBannerLayout"/>
+          <include name="setup"/>
+          <include name="verifyRecipeTimingAndUtilityOptions"/>
+          <include name="verifyRecipeContentProfile"/>
+          <include name="verifyRecipeRatingsAreDisplayed"/>
+        </methods>
+      </class> <!-- tests.RecipeDetailTest -->
+      <class name="tests.MyRecipesTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="verifyJoinNavigation"/>
+          <include name="verifyRecipeSearch"/>
+          <include name="verifyLoginNavigation"/>
+          <include name="verifySearchBar"/>
+          <include name="verifyHeroHeading"/>
+          <include name="verifyLoginButton"/>
+          <include name="verifyJoinButton"/>
+          <include name="setupPage"/>
+        </methods>
+      </class> <!-- tests.MyRecipesTest -->
+      <class name="tests.NewsletterTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="testNewsletterSubscriptionDataDriven"/>
+        </methods>
+      </class> <!-- tests.NewsletterTest -->
+      <class name="tests.SweepstakesTest">
+        <methods>
+          <include name="testMobileResponsivenessBreakpointScaling"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="testMandatoryFieldValidation"/>
+          <include name="testTermsAndConditionsLinkRouting"/>
+          <include name="testBrowserCompatibilityEnvironmentMetadata"/>
+          <include name="testAdvertisementPageSpaceOccupancy"/>
+          <include name="testApplicationStabilityDuringSubmissionPipeline"/>
+          <include name="testSweepstakesPageOpensSuccessfully"/>
+          <include name="testSweeptakesSubscriptionDataDriven"/>
+        </methods>
+      </class> <!-- tests.SweepstakesTest -->
+    </classes>
+  </test> <!-- AllRecipes Regression Suite - FireFox(failed) -->
+</suite> <!-- Failed suite [AllRecipes Automation Suite] -->

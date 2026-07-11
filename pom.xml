@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>AllRecipesTesting</groupId>
+  <artifactId>AllRecipesTesting</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+        <!-- Selenium Java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.21.0</version>
+        </dependency>
+        
+        <!-- TestNG -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
+        </dependency>
+
+        <!-- Apache POI for Excel -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.5</version>
+        </dependency>
+        
+        <!-- Commons IO for Screenshots -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.16.1</version>
+        </dependency>
+        
+        <!-- Extent Reports for Rich HTML Reporting -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.1</version>
+        </dependency>
+        <dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>6.3.4</version>
+</dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+        <!-- TestNG ടെസ്റ്റുകൾ മെവൻ വഴി പാരലൽ ആയി റൺ ചെയ്യാനുള്ള പ്ലഗിൻ -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
+                <suiteXmlFiles>
+                    <!-- നിങ്ങളുടെ പ്രൊജക്റ്റിലെ testng.xml ഫയലിന്റെ പേര് ഇവിടെ നൽകുന്നു -->
+                    <suiteXmlFile>testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+                <!-- പാരലൽ ത്രെഡുകൾ കൃത്യമായി വർക്ക് ചെയ്യാൻ സഹായിക്കുന്നു -->
+                <perCoreThreadCount>false</perCoreThreadCount> 
+            </configuration>
+        </plugin>
+        
+        <!-- ജാവ വെർഷൻ അനുയോജ്യത ഉറപ്പാക്കാൻ (Java 11 അല്ലെങ്കിൽ അതിനു മുകളിൽ) -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.13.0</version>
+            <configuration>
+                <source>11</source>
+                <target>11</target>
+            </configuration>
+        </plugin>
+    </plugins>
+  </build>
+  
+ 
+
+</project>

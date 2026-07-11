@@ -1,0 +1,596 @@
+<html>
+<head>
+<title>TestNG:  Regression Execution - Edge Browser</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Regression Execution - Edge Browser</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>53/4/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Jul 11 17:21:12 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>2012 seconds (2012205 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.SearchTest.verifySuggestions()'><b>verifySuggestions</b><br>Test class: tests.SearchTest<br>Test method: RS_008: Verify suggestions appear while typing</td>
+<td><div><pre>java.lang.AssertionError: FAIL: Autocomplete suggestions did not drop down. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SearchTest.verifySuggestions(SearchTest.java:110)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div><a href='#' onClick='toggleBox("stack-trace43103123", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace43103123'><pre>java.lang.AssertionError: FAIL: Autocomplete suggestions did not drop down. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SearchTest.verifySuggestions(SearchTest.java:110)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div></td>
+<td>33</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyBrokenImages()'><b>verifyBrokenImages</b><br>Test class: tests.SearchTest</td>
+<td><div><pre>java.lang.AssertionError: Broken content images found on results page. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SearchTest.verifyBrokenImages(SearchTest.java:131)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2144337512", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2144337512'><pre>java.lang.AssertionError: Broken content images found on results page. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SearchTest.verifyBrokenImages(SearchTest.java:131)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div></td>
+<td>2</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testMobileResponsivenessBreakpointScaling()'><b>testMobileResponsivenessBreakpointScaling</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify mobile responsiveness elements scale usable inside compressed display frames</td>
+<td><div><pre>java.lang.AssertionError: Mobile Responsiveness Error: Form elements vanished or compressed out of viewport boundaries! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SweepstakesTest.testMobileResponsivenessBreakpointScaling(SweepstakesTest.java:153)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2053640501", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2053640501'><pre>java.lang.AssertionError: Mobile Responsiveness Error: Form elements vanished or compressed out of viewport boundaries! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SweepstakesTest.testMobileResponsivenessBreakpointScaling(SweepstakesTest.java:153)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div></td>
+<td>28</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyBrokenLinks()'><b>verifyBrokenLinks</b><br>Test class: tests.SearchTest</td>
+<td><div><pre>java.lang.AssertionError: Broken content hyperlinks found on results page. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SearchTest.verifyBrokenLinks(SearchTest.java:141)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div><a href='#' onClick='toggleBox("stack-trace648673716", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace648673716'><pre>java.lang.AssertionError: Broken content hyperlinks found on results page. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at tests.SearchTest.verifyBrokenLinks(SearchTest.java:141)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+</pre></div></td>
+<td>11</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.NewsletterTest.testNewsletterSubscriptionDataDriven()'><b>testNewsletterSubscriptionDataDriven</b><br>Test class: tests.NewsletterTest<br>Parameters: invalidEmail@@.com, Please provide your email address in format: yourname@example.com</td>
+<td></td>
+<td>20</td>
+<td>tests.NewsletterTest@683dbc2c</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyKeywordSearch()'><b>verifyKeywordSearch</b><br>Test class: tests.SearchTest<br>Parameters: </td>
+<td></td>
+<td>0</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.NewsletterTest.testNewsletterSubscriptionDataDriven()'><b>testNewsletterSubscriptionDataDriven</b><br>Test class: tests.NewsletterTest<br>Parameters: validuser123@gmail.com, Success!
+Thanks for signing up!</td>
+<td></td>
+<td>21</td>
+<td>tests.NewsletterTest@683dbc2c</td></tr>
+<tr>
+<td title='tests.NewsletterTest.testNewsletterSubscriptionDataDriven()'><b>testNewsletterSubscriptionDataDriven</b><br>Test class: tests.NewsletterTest<br>Parameters: , empty</td>
+<td></td>
+<td>26</td>
+<td>tests.NewsletterTest@683dbc2c</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyHomepageContentSections()'><b>verifyHomepageContentSections</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>6</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyLoginButton()'><b>verifyLoginButton</b><br>Test class: tests.MyRecipesTest</td>
+<td></td>
+<td>0</td>
+<td>tests.MyRecipesTest@68267da0</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyHomepageScrolling()'><b>verifyHomepageScrolling</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyLoginNavigation()'><b>verifyLoginNavigation</b><br>Test class: tests.MyRecipesTest</td>
+<td></td>
+<td>19</td>
+<td>tests.MyRecipesTest@68267da0</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyRecipeSearch()'><b>verifyRecipeSearch</b><br>Test class: tests.MyRecipesTest</td>
+<td></td>
+<td>4</td>
+<td>tests.MyRecipesTest@68267da0</td></tr>
+<tr>
+<td title='tests.SearchTest.verifySearchBarDisplayed()'><b>verifySearchBarDisplayed</b><br>Test class: tests.SearchTest</td>
+<td></td>
+<td>0</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeContentProfile()'><b>verifyRecipeContentProfile</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8095/black-forest-cake-i/</td>
+<td></td>
+<td>63</td>
+<td>tests.RecipeDetailTest@2638011</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyAdvertisingBannerLayout()'><b>verifyAdvertisingBannerLayout</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8095/black-forest-cake-i/</td>
+<td></td>
+<td>18</td>
+<td>tests.RecipeDetailTest@2638011</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweepstakesPageOpensSuccessfully()'><b>testSweepstakesPageOpensSuccessfully</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify Sweepstakes page opens successfully</td>
+<td></td>
+<td>6</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeRatingsAreDisplayed()'><b>verifyRecipeRatingsAreDisplayed</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8858/cream-of-chicken-breasts/</td>
+<td></td>
+<td>2</td>
+<td>tests.RecipeDetailTest@2638011</td></tr>
+<tr>
+<td title='tests.NewsletterTest.testNewsletterSubscriptionDataDriven()'><b>testNewsletterSubscriptionDataDriven</b><br>Test class: tests.NewsletterTest<br>Parameters: , </td>
+<td></td>
+<td>23</td>
+<td>tests.NewsletterTest@683dbc2c</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweeptakesSubscriptionDataDriven()'><b>testSweeptakesSubscriptionDataDriven</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenarios: Valid Entry, Invalid Email, Success Msg, and Duplicate Handling<br>Parameters: [Ljava.lang.String;@1df6d0e8</td>
+<td></td>
+<td>42</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyEmptySearch()'><b>verifyEmptySearch</b><br>Test class: tests.SearchTest</td>
+<td></td>
+<td>2</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testAdvertisementPageSpaceOccupancy()'><b>testAdvertisementPageSpaceOccupancy</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify Advertisement layout bounds do not occupy excessive viewport space</td>
+<td></td>
+<td>22</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweeptakesSubscriptionDataDriven()'><b>testSweeptakesSubscriptionDataDriven</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenarios: Valid Entry, Invalid Email, Success Msg, and Duplicate Handling<br>Parameters: [Ljava.lang.String;@7fc2fc09</td>
+<td></td>
+<td>18</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeTimingAndUtilityOptions()'><b>verifyRecipeTimingAndUtilityOptions</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8858/cream-of-chicken-breasts/</td>
+<td></td>
+<td>14</td>
+<td>tests.RecipeDetailTest@2638011</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyHeaderMenusContent()'><b>verifyHeaderMenusContent</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyFooterDisplayed()'><b>verifyFooterDisplayed</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyHeroHeading()'><b>verifyHeroHeading</b><br>Test class: tests.MyRecipesTest</td>
+<td></td>
+<td>0</td>
+<td>tests.MyRecipesTest@68267da0</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyAdvertisingBannerLayout()'><b>verifyAdvertisingBannerLayout</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8858/cream-of-chicken-breasts/</td>
+<td></td>
+<td>11</td>
+<td>tests.RecipeDetailTest@2638011</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyNewsletterLinkAvailable()'><b>verifyNewsletterLinkAvailable</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweeptakesSubscriptionDataDriven()'><b>testSweeptakesSubscriptionDataDriven</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenarios: Valid Entry, Invalid Email, Success Msg, and Duplicate Handling<br>Parameters: [Ljava.lang.String;@22370fdb</td>
+<td></td>
+<td>19</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyMyRecipesMenuAvailable()'><b>verifyMyRecipesMenuAvailable</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyScroll()'><b>verifyScroll</b><br>Test class: tests.SearchTest</td>
+<td></td>
+<td>31</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyCoreHeaderElements()'><b>verifyCoreHeaderElements</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyKeywordSearch()'><b>verifyKeywordSearch</b><br>Test class: tests.SearchTest<br>Parameters: xyz123456</td>
+<td></td>
+<td>33</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyRecipeMatch()'><b>verifyRecipeMatch</b><br>Test class: tests.SearchTest</td>
+<td></td>
+<td>63</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifySearchBar()'><b>verifySearchBar</b><br>Test class: tests.MyRecipesTest</td>
+<td></td>
+<td>0</td>
+<td>tests.MyRecipesTest@68267da0</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeTimingAndUtilityOptions()'><b>verifyRecipeTimingAndUtilityOptions</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8095/black-forest-cake-i/</td>
+<td></td>
+<td>16</td>
+<td>tests.RecipeDetailTest@2638011</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweeptakesSubscriptionDataDriven()'><b>testSweeptakesSubscriptionDataDriven</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenarios: Valid Entry, Invalid Email, Success Msg, and Duplicate Handling<br>Parameters: [Ljava.lang.String;@3e4edf4e</td>
+<td></td>
+<td>30</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeRatingsAreDisplayed()'><b>verifyRecipeRatingsAreDisplayed</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8095/black-forest-cake-i/</td>
+<td></td>
+<td>9</td>
+<td>tests.RecipeDetailTest@2638011</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyKeywordSearch()'><b>verifyKeywordSearch</b><br>Test class: tests.SearchTest<br>Parameters: cake</td>
+<td></td>
+<td>35</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.HomeTest.verifySweepstakesLinkAvailable()'><b>verifySweepstakesLinkAvailable</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>2</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyHomepageImagesLoad()'><b>verifyHomepageImagesLoad</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>1</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testMandatoryFieldValidation()'><b>testMandatoryFieldValidation</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify mandatory field validation triggers error flags on blank submission</td>
+<td></td>
+<td>23</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyInvalidKeyword()'><b>verifyInvalidKeyword</b><br>Test class: tests.SearchTest</td>
+<td></td>
+<td>2</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyHomepageLoadingAndMetadata()'><b>verifyHomepageLoadingAndMetadata</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.HomeTest.verifyBrowserNavigation()'><b>verifyBrowserNavigation</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>9</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testBrowserCompatibilityEnvironmentMetadata()'><b>testBrowserCompatibilityEnvironmentMetadata</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify browser compatibility driver context metrics mapping</td>
+<td></td>
+<td>0</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyKeywordSearch()'><b>verifyKeywordSearch</b><br>Test class: tests.SearchTest<br>Parameters: pasta</td>
+<td></td>
+<td>33</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testSweeptakesSubscriptionDataDriven()'><b>testSweeptakesSubscriptionDataDriven</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenarios: Valid Entry, Invalid Email, Success Msg, and Duplicate Handling<br>Parameters: [Ljava.lang.String;@159429ff</td>
+<td></td>
+<td>76</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testTermsAndConditionsLinkRouting()'><b>testTermsAndConditionsLinkRouting</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify Terms & Conditions link structure and endpoint navigation routing</td>
+<td></td>
+<td>7</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyJoinNavigation()'><b>verifyJoinNavigation</b><br>Test class: tests.MyRecipesTest</td>
+<td></td>
+<td>10</td>
+<td>tests.MyRecipesTest@68267da0</td></tr>
+<tr>
+<td title='tests.SweepstakesTest.testApplicationStabilityDuringSubmissionPipeline()'><b>testApplicationStabilityDuringSubmissionPipeline</b><br>Test class: tests.SweepstakesTest<br>Test method: Scenario: Verify application stability during form data transmission execution routines</td>
+<td></td>
+<td>0</td>
+<td>tests.SweepstakesTest@6ff29830</td></tr>
+<tr>
+<td title='tests.MyRecipesTest.verifyJoinButton()'><b>verifyJoinButton</b><br>Test class: tests.MyRecipesTest</td>
+<td></td>
+<td>0</td>
+<td>tests.MyRecipesTest@68267da0</td></tr>
+<tr>
+<td title='tests.SearchTest.verifyKeywordSearch()'><b>verifyKeywordSearch</b><br>Test class: tests.SearchTest<br>Parameters: chicken</td>
+<td></td>
+<td>33</td>
+<td>tests.SearchTest@2898ac89</td></tr>
+<tr>
+<td title='tests.NewsletterTest.testNewsletterSubscriptionDataDriven()'><b>testNewsletterSubscriptionDataDriven</b><br>Test class: tests.NewsletterTest<br>Parameters: existinguser@gmail.com, Success!
+Thanks for signing up!</td>
+<td></td>
+<td>26</td>
+<td>tests.NewsletterTest@683dbc2c</td></tr>
+<tr>
+<td title='tests.RecipeDetailTest.verifyRecipeContentProfile()'><b>verifyRecipeContentProfile</b><br>Test class: tests.RecipeDetailTest<br>Parameters: https://www.allrecipes.com/recipe/8858/cream-of-chicken-breasts/</td>
+<td></td>
+<td>53</td>
+<td>tests.RecipeDetailTest@2638011</td></tr>
+<tr>
+<td title='tests.HomeTest.verifySearchBarDisplayed()'><b>verifySearchBarDisplayed</b><br>Test class: tests.HomeTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomeTest@6e509ffa</td></tr>
+</table><p>
+</body>
+</html>

@@ -8,75 +8,153 @@ import pages.HomePage;
 import pages.NewsletterPage;
 import utilities.ExcelUtils;
 
+// Test class for Newsletter Subscription functionality
 public class NewsletterTest extends BaseClass {
 
+    // ==========================================
+    // Data Provider
+    // Reads test data from Excel
+    // ==========================================
     @DataProvider(name = "newsletterData")
     public Object[][] getNewsletterData() {
-        return ExcelUtils.getTestData("src/main/resources/testdata/TestData.xlsx", "NewsletterData", 2);
+
+        return ExcelUtils.getTestData(
+                "src/main/resources/testdata/TestData.xlsx",
+                "NewsletterData",
+                2);
     }
 
+    // ==========================================
+    // Data-Driven Newsletter Subscription Test
+    // ==========================================
     @Test(dataProvider = "newsletterData")
-    public void testNewsletterSubscriptionDataDriven(String emailAddress, String expectedMessage) {
+    public void testNewsletterSubscriptionDataDriven(String emailAddress,
+                                                     String expectedMessage) {
+
+        // Create Home Page object
         HomePage homePage = new HomePage(driver);
-        
-        // 1. Navigate to the Newsletter page via the homepage link
-        NewsletterPage newsletterPage = homePage.clickNewslettersMenuLink();
-        
-        // 2. Resolve structural test execution paths based on expected message types
+
+        // Navigate to Newsletter page
+        NewsletterPage newsletterPage =
+                homePage.clickNewslettersMenuLink();
+
+        // ==========================================
+        // Submit email based on test scenario
+        // ==========================================
+
         if (expectedMessage.equalsIgnoreCase("success")) {
-            // Check if it's the long email scenario (TC_NS_006); if so, use the exact data parameter
+
+            // Use original email for long-email test case
             if (emailAddress.length() > 35) {
+
                 newsletterPage.submitEmailWithAutoScroll(emailAddress);
+
             } else {
-                // Generates a dynamic unique email address to ensure a clean subscription pass for short emails
-                String uniqueEmail = "user" + System.currentTimeMillis() + "@gmail.com";
+
+                // Generate unique email to avoid duplicate subscription
+                String uniqueEmail =
+                        "user"
+                                + System.currentTimeMillis()
+                                + "@gmail.com";
+
                 newsletterPage.submitEmailWithAutoScroll(uniqueEmail);
             }
+
         } else {
-            // Uses the designated static string (e.g., existing user or invalid text) from Excel
+
+            // Submit invalid or duplicate email from Excel
             newsletterPage.submitEmailWithAutoScroll(emailAddress);
         }
 
-        // 3. Dynamic verification pass extracting live elements and formatting log outputs
-        System.out.println("\n==================================================");
-        System.out.println("📋 VERIFICATION RESULTS FOR INPUT: " + emailAddress);
-        System.out.println("==================================================");
+        // ==========================================
+        // Display execution details in console
+        // ==========================================
+
+        System.out.println("\n==========================================");
+        System.out.println("Verification for : " + emailAddress);
+        System.out.println("==========================================");
+
+        // ==========================================
+        // Verify Successful Subscription
+        // ==========================================
 
         if (expectedMessage.equalsIgnoreCase("success")) {
-            String capturedSuccess = newsletterPage.getSuccessMessageText();
-            Assert.assertFalse(capturedSuccess.isEmpty(), "Subscription process failed! Banner text was empty.");
-            System.out.println("SUCCESS: \"" + capturedSuccess + "\"\n");
-            
-        } else if (expectedMessage.equalsIgnoreCase("Email already subscribed")) {
-            // Retrieve whatever confirmation feedback text actually renders on the screen
-            String duplicateBannerText = newsletterPage.getSuccessMessageText();
-            
-            System.out.println("ℹ️ DUPLICATE SUB CLASSIFICATION DETECTED");
-            System.out.println("💬 Actual UI Feedback Received : \"" + duplicateBannerText.replace("\n", " ") + "\"");
-            System.out.println("🎯 Expected UI Feedback Marker   : \"" + expectedMessage + "\"");
 
-            // STRICT EXPLICIT BUG DETECTION FLAG: 
-            // If the application displays a false success message for an existing account, fail the test immediately
-            if (duplicateBannerText.contains("Thanks for signing up") || duplicateBannerText.contains("Success!")) {
-                System.out.println("❌ BUG DETECTED: Application accepted a duplicate email address and displayed a false success banner!");
-                Assert.fail("FAIL: Expected warning '" + expectedMessage + "' but the application displayed a false success banner: '" + duplicateBannerText.replace("\n", " ") + "'");
-            } else {
-                // Regular verification assertion pass if the application behaves correctly
-                Assert.assertTrue(duplicateBannerText.toLowerCase().contains("already") || duplicateBannerText.equalsIgnoreCase(expectedMessage),
-                    "Duplicate email submission failed to display an appropriate warning message!");
-                System.out.println("SUCCESSFULLY VERIFIED DUPLICATE CONTROL FLOW.");
-            }
+            String capturedSuccess =
+                    newsletterPage.getSuccessMessageText();
 
-        } else if (expectedMessage.equalsIgnoreCase("invalid")) {
-            String errorMsg = newsletterPage.getErrorMessageText();
-            Assert.assertFalse(errorMsg.isEmpty(), "Validation error message was not displayed!");
-            System.out.println("INVALID DATA CHECK: \"" + errorMsg + "\"");
+            Assert.assertFalse(
+                    capturedSuccess.isEmpty(),
+                    "Subscription failed.");
+
+            System.out.println(
+                    "Success Message : "
+                            + capturedSuccess);
+
         }
-        System.out.println("==================================================\n");
-        
-        // Clear layout overlay view bounds so subsequent execution threads run cleanly
+
+        // ==========================================
+        // Verify Duplicate Email Scenario
+        // ==========================================
+
+        else if (expectedMessage.equalsIgnoreCase(
+                "Email already subscribed")) {
+
+            String duplicateBannerText =
+                    newsletterPage.getSuccessMessageText();
+
+            System.out.println(
+                    "Actual Message : "
+                            + duplicateBannerText);
+
+            System.out.println(
+                    "Expected Message : "
+                            + expectedMessage);
+
+            // Detect application bug
+            if (duplicateBannerText.contains("Success!")
+                    || duplicateBannerText.contains(
+                    "Thanks for signing up")) {
+
+                Assert.fail(
+                        "BUG: Duplicate email accepted by application.");
+
+            } else {
+
+                Assert.assertTrue(
+
+                        duplicateBannerText
+                                .toLowerCase()
+                                .contains("already")
+
+                                ||
+
+                                duplicateBannerText
+                                        .equalsIgnoreCase(expectedMessage),
+
+                        "Duplicate warning not displayed.");
+            }
+        }
+
+        // ==========================================
+        // Verify Invalid Email Scenario
+        // ==========================================
+
+        else if (expectedMessage.equalsIgnoreCase("invalid")) {
+
+            String errorMessage =
+                    newsletterPage.getErrorMessageText();
+
+            Assert.assertFalse(
+                    errorMessage.isEmpty(),
+                    "Validation message not displayed.");
+
+            System.out.println(
+                    "Validation Message : "
+                            + errorMessage);
+        }
+
+        // Refresh page before next DataProvider iteration
         driver.navigate().refresh();
-    }   
+    }
 }
- 
- 

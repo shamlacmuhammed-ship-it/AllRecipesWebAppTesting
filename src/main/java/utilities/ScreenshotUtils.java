@@ -4,6 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -12,34 +13,58 @@ import java.util.Date;
 public class ScreenshotUtils {
 
     /**
-     * Captures a screenshot of the active browser viewport and saves it to the target directory.
-     * 
-     * @param driver     The thread-isolated WebDriver instance.
-     * @param testName   The name of the currently executing test method.
-     * @return String    The absolute file path of the saved screenshot, or null if an error occurs.
+     * Captures a screenshot of the current browser window.
+     *
+     * @param driver    WebDriver instance
+     * @param testName Name of the test case
+     * @return Absolute path of the saved screenshot
      */
+
     public static String takeScreenshot(WebDriver driver, String testName) {
-        // 1. Generates a precise timestamp including milliseconds to secure parallel file naming uniqueness
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmssSSS").format(new Date());
-        
-        // 2. Defines the absolute storage location path for the output PNG capture payload
-        String screenshotPath = System.getProperty("user.dir") + "/target/screenshots/" + testName + "_" + timeStamp + ".png";
-        
+
+        // Generate a unique timestamp for the screenshot file
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmssSSS")
+                .format(new Date());
+
+        // Create the screenshot file path
+        String screenshotPath =
+                System.getProperty("user.dir")
+                        + "/target/screenshots/"
+                        + testName + "_" + timeStamp + ".png";
+
         try {
-            // 3. Casts the active driver session to capture visual page pixel paint arrays
-            File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+            // Capture screenshot from the current browser window
+            File source =
+                    ((TakesScreenshot) driver)
+                            .getScreenshotAs(OutputType.FILE);
+
+            // Create destination file
             File destination = new File(screenshotPath);
-            
-            // 4. Commits and streams the captured image artifact file straight to storage blocks
+
+            // Copy screenshot to the destination folder
             FileUtils.copyFile(source, destination);
-            System.out.println("📸 Failure snapshot saved successfully at: " + screenshotPath);
+
+            // Print success message
+            System.out.println("Screenshot saved successfully: "
+                    + screenshotPath);
+
             return screenshotPath;
-            
+
         } catch (IOException e) {
-            System.err.println("❌ Critical Failure: Framework crashed attempting to write screenshot payload to storage: " + e.getMessage());
+
+            // Handle file saving errors
+            System.err.println("Failed to save screenshot: "
+                    + e.getMessage());
+
             return null;
+
         } catch (Exception e) {
-            System.err.println("❌ Unexpected error tracing active browser interface view canvas: " + e.getMessage());
+
+            // Handle unexpected errors during screenshot capture
+            System.err.println("Error while capturing screenshot: "
+                    + e.getMessage());
+
             return null;
         }
     }

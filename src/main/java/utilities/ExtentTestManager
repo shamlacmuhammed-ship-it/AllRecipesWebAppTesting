@@ -1,0 +1,35 @@
+package utilities;
+
+// Import ExtentTest class used to log individual test execution
+import com.aventstack.extentreports.ExtentTest;
+
+public class ExtentTestManager {
+
+    // ThreadLocal stores a separate ExtentTest object
+    // for each parallel execution thread.
+    // This prevents report logs from mixing between tests.
+    private static ThreadLocal<ExtentTest> extentTest =
+            new ThreadLocal<>();
+
+    // Returns the ExtentTest object
+    // of the current executing thread
+    public static ExtentTest getTest() {
+
+        return extentTest.get();
+    }
+
+    // Stores the ExtentTest object
+    // for the current executing thread
+    public static void setTest(ExtentTest test) {
+
+        extentTest.set(test);
+    }
+
+    // Removes the ExtentTest object
+    // after test execution is completed.
+    // Prevents memory leaks during parallel execution.
+    public static void unload() {
+
+        extentTest.remove();
+    }
+}

@@ -1,0 +1,52 @@
+package utilities;
+
+// Import ExtentReports main class
+import com.aventstack.extentreports.ExtentReports;
+
+// Import Spark Reporter used to generate HTML reports
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+public class ExtentManager {
+
+    // Static ExtentReports object
+    // Only one report instance is created for the entire test execution
+    private static ExtentReports extent;
+
+    // Returns the ExtentReports instance
+    public static ExtentReports getInstance() {
+
+        // Check whether the report object is already created
+        if (extent == null) {
+
+            // Create Spark Reporter
+            // Report will be generated inside the test-output folder
+            // with the name ExtentReport.html
+            ExtentSparkReporter spark =
+                    new ExtentSparkReporter("test-output/ExtentReport.html");
+
+            // Set the report name displayed inside the HTML report
+            spark.config().setReportName("AllRecipes Automation Report");
+
+            // Set the browser tab title of the report
+            spark.config().setDocumentTitle("Automation Test Report");
+
+            // Create ExtentReports object
+            extent = new ExtentReports();
+
+            // Attach Spark Reporter to ExtentReports
+            extent.attachReporter(spark);
+
+            // Add project-related information to the report
+            extent.setSystemInfo("Project", "AllRecipes");
+
+            // Add tester name
+            extent.setSystemInfo("Tester", "Shamla");
+
+            // Add execution environment
+            extent.setSystemInfo("Environment", "QA");
+        }
+
+        // Return the ExtentReports instance
+        return extent;
+    }
+}

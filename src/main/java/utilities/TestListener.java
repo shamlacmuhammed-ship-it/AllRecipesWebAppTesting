@@ -1,74 +1,102 @@
 package utilities;
 
-import org.openqa.selenium.WebDriver;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
+// Import TestNG listener interfaces and result classes
+import org.testng.*;
 
+// Import Extent Reports classes
+import com.aventstack.extentreports.*;
+
+// Import BaseClass to access the current WebDriver instance
 import base.BaseClass;
 
-// TestNG Listener class used to monitor test execution events
 public class TestListener implements ITestListener {
 
-    // ==========================
-    // Test Execution Events
-    // ==========================
+    // Create a single ExtentReports instance
+    // This report object is shared throughout the test execution
+    private static ExtentReports extent =
+            ExtentManager.getInstance();
 
-    // Executes before every test method starts
+    // =====================================================
+    // Executes before every @Test method starts
+    // =====================================================
     @Override
     public void onTestStart(ITestResult result) {
 
-        System.out.println("▶️ Starting execution: " + result.getName());
+        // Create a new test entry in the Extent Report
+        // using the current test method name
+        ExtentTest test =
+                extent.createTest(
+                        result.getMethod().getMethodName());
+
+        // Store the ExtentTest object in ThreadLocal
+        // for parallel execution support
+        ExtentTestManager.setTest(test);
     }
 
-    // Executes when a test case passes successfully
+    // =====================================================
+    // Executes when a test passes successfully
+    // =====================================================
     @Override
     public void onTestSuccess(ITestResult result) {
 
-        System.out.println("✅ Test Passed: " + result.getName());
+        // Log PASS status in the Extent Report
+        ExtentTestManager.getTest().pass("Test Passed");
     }
 
-    // Executes automatically when a test case fails
+    // =====================================================
+    // Executes when a test fails
+    // =====================================================
     @Override
     public void onTestFailure(ITestResult result) {
 
-        System.out.println("❌ Test Failed: " + result.getName());
+        // Log the failure along with the exception details
+        ExtentTestManager.getTest().fail(result.getThrowable());
 
         // Get the current test class instance
-        BaseClass base = (BaseClass) result.getInstance();
+        BaseClass base =
+                (BaseClass) result.getInstance();
 
-        // Retrieve the current WebDriver instance
-        WebDriver driver = base.getDriver();
+        // Capture screenshot using the current WebDriver
+        String path =
+                ScreenshotUtils.takeScreenshot(
+                        base.getDriver(),
+                        result.getMethod().getMethodName());
 
-        // Capture screenshot only if the browser is available
-        if (driver != null) {
+        try {
 
-            ScreenshotUtils.takeScreenshot(driver, result.getName());
+            // Attach the captured screenshot
+            // to the Extent Report
+            ExtentTestManager.getTest()
+                    .addScreenCaptureFromPath(path);
+
+        } catch (Exception ignored) {
+
+            // Ignore screenshot attachment errors
+            // to avoid interrupting report generation
         }
     }
 
-    // Executes when a test case is skipped
+    // =====================================================
+    // Executes when a test is skipped
+    // =====================================================
     @Override
     public void onTestSkipped(ITestResult result) {
 
-        System.out.println("⏭️ Test Skipped: " + result.getName());
+        // Log SKIP status in the report
+        ExtentTestManager.getTest().skip("Test Skipped");
     }
 
-    // ==========================
-    // Test Suite Events
-    // ==========================
-
-    // Executes before the entire Test Suite starts
-    @Override
-    public void onStart(ITestContext context) {
-
-        System.out.println("🚀 Test Suite Started");
-    }
-
-    // Executes after the entire Test Suite finishes
+    // =====================================================
+    // Executes after all tests in the suite finish
+    // =====================================================
     @Override
     public void onFinish(ITestContext context) {
 
-        System.out.println("🏁 Test Suite Finished");
+        // Write all test results to the HTML report
+        extent.flush();
+
+        // Remove the ThreadLocal ExtentTest object
+        // to prevent memory leaks
+        ExtentTestManager.unload();
     }
 }
